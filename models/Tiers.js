@@ -1,6 +1,6 @@
 const sequelize = require("sequelize");
 module.exports = (sequelize, datatype) => {
-  const cuve_ = sequelize.define("Tiers", {
+  const Tiers = sequelize.define("Tiers", {
 
     Societe:    { type: datatype.STRING(50),   allowNull: false, },
     Solde :     { type: datatype.DECIMAL(4, 2), },
@@ -17,7 +17,8 @@ module.exports = (sequelize, datatype) => {
     ModifieLe:  { type: datatype.DATE           },
   },
   {
-    tableName: 'Tiers'
+    tableName: 'Tiers',
+    timestamps: false, // Disable createdAt and updatedAt columns
   }
   )
   return Tiers
