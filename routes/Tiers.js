@@ -1,36 +1,13 @@
 const express =require('express')
 const router =express.Router()
 const model =require('../models')
-const  Cuve = model.Cuvet
+const  Tiers = model.Tiers
 const sequelize =require("sequelize")
-const Mesur = model.Mesur
 
 router.post('/Tires', async (req, res) => {
   try {
-    const results = await Cuve.findAll({
-      attributes: [
-        'cuve_id',
-        'libelle',
-        'type_carburant',
-        'volume_cuve',
-        [sequelize.literal('100/volume_cuve'), 'Pourcentage'],
-      ],
-      include: [
-        {
-          model: Mesur,
-          attributes: ['level', 'id', 'Qte','AlarmeBattery','Volt','Rsrp',
-          //[Sequelize.col('(Mesur.Qte * 100) '),"pour"]
-        ],
-          order: [['id', 'DESC']],
-          limit: 1,
-          required: false,
-        
-        },
-      ],
+    const results = await Tiers.findAll({
    
-      where: {
-        IDStation: req.body.IDStation,
-      },
      // raw: true,
     });
 
