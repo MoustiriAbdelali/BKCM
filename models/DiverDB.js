@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, datatype) => {
-  const Categorie = sequelize.define("Categorie", {
+  const DiverDB = sequelize.define("DiverDB", {
 
     Libelle :     { type: datatype.STRING(50), allowNull: false, },
     Couleur:      { type: datatype.INTEGER(8),    },
@@ -12,9 +12,9 @@ module.exports = (sequelize, datatype) => {
     ModifieLe:    { type: datatype.DATE           },
   },
   {
-    tableName: 'Categorie',
+    tableName: 'DiverDB',
     timestamps: false, // Disable createdAt and updatedAt columns
   }
   )
-  return Categorie
+  return DiverDB
 };
