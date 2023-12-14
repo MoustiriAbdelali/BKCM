@@ -10,14 +10,16 @@ app.use( bodyParser.json())
 
 
 //////////////////Routes////////////////////////
-const RTiers=require('./routes/Tiers')
+const RTiers       =require('./routes/Tiers')
+const RContacte    =require('./routes/Contacte')
 //////////////////API//////////////////////
 app.use('/api',RTiers)
+app.use('/api',RContacte)
 
 
 
 
 app.listen(port, () => { 
-  console.log(`Server is running on portyesy hhhhhhhhh  `);
+  console.log(`Server is running on portyesy`);
 });
 

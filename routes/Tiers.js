@@ -19,8 +19,7 @@ router.post('/TTires', async (req, res) => {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
-});
-
+})
 router.post('/ITires', async (req, res) => {
   const newData = {
     Societe:    req.body.Societe,       
@@ -44,9 +43,7 @@ router.post('/ITires', async (req, res) => {
     });
 
 })
-
-
-router.put('/UTires', async (req, res) => {
+router.put ('/UTires', async (req, res) => { 
   const updatedData = {
     Societe:    req.body.Societe,       
     Adresse:    req.body.Adresse,    
@@ -54,6 +51,27 @@ router.put('/UTires', async (req, res) => {
     NIF:        req.body.NIF,       
     NIC:        req.body.NIC,        
     AI:         req.body.AI,         
+    ModifiePar: req.body.ModifiePar,
+    ModifieLe:  req.body.ModifieLe,  
+    };
+    //const id_ = req.query.ID;
+    Tiers.update(updatedData, {
+      where: { id:  req.body.ID },
+    })
+    .then((Tiers) => {
+      console.log('Data updated successfully:', Tiers);
+      res.status(200).json({ message: 'Avec succès' });
+    })
+    .catch((error) => {
+      console.error('Error inserting data:', error);
+      res.status(500).json({ error: 'Erreur lors de la modification des données' });
+    });
+
+})
+router.put ('/BTires', async (req, res) => { 
+  const updatedData = {
+    Societe:    req.body.Societe,       
+    Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
