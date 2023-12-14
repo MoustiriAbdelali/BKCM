@@ -20,7 +20,7 @@ const db =require('../config/DataBase')
     const  Categorie  =MCategorie  (db,sequelize)
     const  DiverDB    =MDiverDB    (db,sequelize)
     const  CodeBarre  =MCodeBarre  (db,sequelize)
-    const  Produit    =MProduit  (db,sequelize)
+    const  Produit    =MProduit    (db,sequelize)
 
 
 
