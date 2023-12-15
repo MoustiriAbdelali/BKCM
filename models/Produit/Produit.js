@@ -5,16 +5,17 @@ module.exports = (sequelize, datatype) => {
     Libelle:    { type: datatype.STRING(50),   allowNull: false, },
     Ref:        { type: datatype.STRING(50),    },
     Qte :       { type: datatype.DECIMAL(4, 2), },
+    QteM :      { type: datatype.DECIMAL(4, 2), },
     Colisage:   { type: datatype.INTEGER(4),    },
 
     PAchat:     { type: datatype.DECIMAL(4, 2), },
-    PHT:        { type: datatype.DECIMAL(4, 2), allowNull: false,},
-    TVA:        { type: datatype.INTEGER(1),    },
+    PHT:        { type: datatype.DECIMAL(4, 2), allowNull: false, },
+    TVA:        { type: datatype.INTEGER(1),    defaultValue:0    },
     PTTC:       { type: datatype.DECIMAL(4, 2), allowNull: false, },
  
     
-    Type  :     { type: datatype.INTEGER(1),    },//0 Marchendise 1 Service 3 N°serie
-    Statut:     { type: datatype.INTEGER(1),    },// 0Actif 1Bloquer
+    Type  :     { type: datatype.INTEGER(1),    defaultValue:0    },//0 Marchendise 1 Service 3 N°serie
+    Statut:     { type: datatype.INTEGER(1),    defaultValue:0    },// 0Actif 1Bloquer
 
     AjouterPar: { type: datatype.STRING(50),    },
     AjouterLe:  { type: datatype.DATE           },

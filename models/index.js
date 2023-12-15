@@ -9,7 +9,7 @@ const db =require('../config/DataBase')
     const  MConctct      =require('./Tiers/Contacte')
     const  MCompte       =require('./Tresorerie/Compte')
     const  MCategorie    =require('./Produit/CategorieProduit')
-    const  MDiverDB      =require('./DiverDB')
+    const  MDiverDB      =require('./Diver/DiverDB')
     const  MCodeBarre    =require('./Produit/CodeBarre')
     const  MProduit      =require('./Produit/Produit')
     /////////////squilz model//////////////////////
@@ -31,6 +31,7 @@ const db =require('../config/DataBase')
     Tiers.hasMany     (Contact,     { foreignKey: 'TiersID'     });
     Categorie.hasMany (Categorie,   { foreignKey: 'CategorieID' });
     Produit.hasMany   (CodeBarre,   { foreignKey: 'ProduitID'   });
+    Categorie.hasMany (Produit,     { foreignKey: 'CategorieID'   });
     
     module.exports={
         Tiers,

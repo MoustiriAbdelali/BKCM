@@ -71,7 +71,6 @@ router.put ('/UTires', async (req, res) => {
 })
 router.put ('/STires', async (req, res) => { 
   const updatedData = {
-    Societe:    req.body.Societe,       
     Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
