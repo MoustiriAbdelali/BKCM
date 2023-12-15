@@ -1,6 +1,6 @@
 const express =require('express')
 const router =express.Router()
-const model =require('../models')
+const model =require('../../models')
 const Contacte = model.Contact
 const sequelize =require("sequelize")
 

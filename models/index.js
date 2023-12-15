@@ -5,13 +5,13 @@ const db =require('../config/DataBase')
 
 
     ////////////////////model////////////////
-    const  MTiers        =require('./Tiers')
-    const  MConctct      =require('./Contacte')
-    const  MCompte       =require('./Compte')
-    const  MCategorie    =require('./CategorieProduit')
+    const  MTiers        =require('./Tiers/Tiers')
+    const  MConctct      =require('./Tiers/Contacte')
+    const  MCompte       =require('./Tresorerie/Compte')
+    const  MCategorie    =require('./Articles/CategorieProduit')
     const  MDiverDB      =require('./DiverDB')
-    const  MCodeBarre    =require('./CodeBarre')
-    const  MProduit      =require('./Produit')
+    const  MCodeBarre    =require('./Articles/CodeBarre')
+    const  MProduit      =require('./Articles/Produit')
     /////////////squilz model//////////////////////
     
     const  Tiers      =MTiers      (db,sequelize)

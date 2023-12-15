@@ -10,11 +10,13 @@ app.use( bodyParser.json())
 
 
 //////////////////Routes////////////////////////
-const RTiers       =require('./routes/Tiers')
-const RContacte    =require('./routes/Contacte')
+const RTiers       =require('./routes/Tiers/Tiers')
+const RContacte    =require('./routes/Tiers/Contacte')
+const RCompte    =require('./routes/Tresorerie/Compte')
 //////////////////API//////////////////////
 app.use('/api',RTiers)
 app.use('/api',RContacte)
+app.use('/api',RCompte)
 
 
 

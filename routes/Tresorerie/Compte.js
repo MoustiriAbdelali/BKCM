@@ -1,16 +1,16 @@
 const express =require('express')
 const router =express.Router()
-const model =require('../models')
-const  Tiers = model.Tiers
+const model =require('../../models')
+const  Compte = model.Compte
 const sequelize =require("sequelize")
 
-router.post('/TTires', async (req, res) => {
+router.post('/TCompte', async (req, res) => {
   try {
-    const results = await Tiers.findAll({
+    const results = await Compte.findAll({
    
      // raw: true,
      where: {
-      Type: req.body.Type,
+      Statut: req.body.Statut,
     },
     });
 
@@ -20,21 +20,16 @@ router.post('/TTires', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.post('/ITires', async (req, res) => {
+router.post('/ICompte', async (req, res) => {
   const newData = {
-    Societe:    req.body.Societe,       
-    Adresse:    req.body.Adresse,    
-    RC:         req.body.RC,         
-    NIF:        req.body.NIF,       
-    NIC:        req.body.NIC,        
-    AI:         req.body.AI,         
-    Type  :     req.body.Type  ,     
+    Libelle:    req.body.Libelle,       
+       
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };
-    Tiers.create(newData)
-    .then((Tiers) => {
-      console.log('Data inserted successfully:', Tiers);
+    Compte.create(newData)
+    .then((Compte) => {
+      console.log('Data inserted successfully:', Compte);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -43,23 +38,18 @@ router.post('/ITires', async (req, res) => {
     });
 
 })
-router.put ('/UTires', async (req, res) => { 
+router.put ('/UCompte', async (req, res) => { 
   const updatedData = {
-    Societe:    req.body.Societe,       
-    Adresse:    req.body.Adresse,    
-    RC:         req.body.RC,         
-    NIF:        req.body.NIF,       
-    NIC:        req.body.NIC,        
-    AI:         req.body.AI,         
+    Libelle:    req.body.Libelle,       
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
     //const id_ = req.query.ID;
-    Tiers.update(updatedData, {
+    Compte.update(updatedData, {
       where: { id:  req.body.ID },
     })
-    .then((Tiers) => {
-      console.log('Data updated successfully:', Tiers);
+    .then((Compte) => {
+      console.log('Data updated successfully:', Compte);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -68,19 +58,18 @@ router.put ('/UTires', async (req, res) => {
     });
 
 })
-router.put ('/BTires', async (req, res) => { 
+router.put ('/SCompte', async (req, res) => { 
   const updatedData = {
-    Societe:    req.body.Societe,       
     Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
     //const id_ = req.query.ID;
-    Tiers.update(updatedData, {
+    Compte.update(updatedData, {
       where: { id:  req.body.ID },
     })
-    .then((Tiers) => {
-      console.log('Data updated successfully:', Tiers);
+    .then((Compte) => {
+      console.log('Data updated successfully:', Compte);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
