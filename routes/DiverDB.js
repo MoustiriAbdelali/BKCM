@@ -1,16 +1,16 @@
 const express =require('express')
 const router =express.Router()
-const model =require('../../models')
-const  CodeBarre = model.CodeBarre
+const model =require('../models')
+const  DiverDB = model.DiverDB
 const sequelize =require("sequelize")
 
-router.post  ('/TCodeBarre', async (req, res) => {
+router.post  ('/TDiverDB', async (req, res) => {
   try {
-    const results = await CodeBarre.findAll({
+    const results = await DiverDB.findAll({
    
      // raw: true,
      where: {
-        ProduitID: req.body.ProduitID,
+        Type: req.body.Type,
     },
     });
 
@@ -20,10 +20,11 @@ router.post  ('/TCodeBarre', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.post  ('/ICodeBarre', async (req, res) => {
+router.post  ('/IDiverDB', async (req, res) => {
   const newData = {
     Libelle:    req.body.Libelle,       
-    ProduitID: req.body.ProduitID,Type:       req.body.Type,
+    Couleur:    req.body.Couleur,       
+    Type:       req.body.Type,
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };
@@ -38,7 +39,7 @@ router.post  ('/ICodeBarre', async (req, res) => {
     });
 
 })
-router.put   ('/UCodeBarre', async (req, res) => { 
+router.put   ('/UDiverDB', async (req, res) => { 
   const updatedData = {
     Libelle:    req.body.Libelle,   
     Couleur:    req.body.Couleur,      
@@ -59,7 +60,7 @@ router.put   ('/UCodeBarre', async (req, res) => {
     });
 
 })
-router.delete('/DCodeBarre', async (req, res) => {
+router.delete('/DDiverDB', async (req, res) => {
     try {
       // Find the record by ID
       const recordToDelete = await DiverDB.findByPk(req.body.ID);
