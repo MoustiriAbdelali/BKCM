@@ -8,10 +8,10 @@ const db =require('../config/DataBase')
     const  MTiers        =require('./Tiers/Tiers')
     const  MConctct      =require('./Tiers/Contacte')
     const  MCompte       =require('./Tresorerie/Compte')
-    const  MCategorie    =require('./Articles/CategorieProduit')
+    const  MCategorie    =require('./Produit/CategorieProduit')
     const  MDiverDB      =require('./DiverDB')
-    const  MCodeBarre    =require('./Articles/CodeBarre')
-    const  MProduit      =require('./Articles/Produit')
+    const  MCodeBarre    =require('./Produit/CodeBarre')
+    const  MProduit      =require('./Produit/Produit')
     /////////////squilz model//////////////////////
     
     const  Tiers      =MTiers      (db,sequelize)
