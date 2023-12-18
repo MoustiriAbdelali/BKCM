@@ -3,7 +3,7 @@ const sequelize = require("sequelize");
 module.exports = (sequelize, datatype) => {
   const DiverDB = sequelize.define("DiverDB", {
 
-    Libelle :     { type: datatype.STRING(50), allowNull: false, },
+    Libelle :     { type: datatype.STRING(50),     allowNull: false, },
     Couleur:      { type: datatype.INTEGER(8),    },
     Type  :       { type: datatype.INTEGER(1),     allowNull: false, },//1 FONCTION
 

@@ -22,6 +22,7 @@ router.post('/TCompte', async (req, res) => {
 })
 router.post('/ICompte', async (req, res) => {
   const newData = {
+    SocieteID:  req.body.SocieteID, 
     Libelle:    req.body.Libelle,       
        
     AjouterPar: req.body.AjouterPar,

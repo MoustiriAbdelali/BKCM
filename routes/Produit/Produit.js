@@ -10,8 +10,7 @@ router.post('/TProduit', async (req, res) => {
    
      // raw: true,
      where: {
-      CategorieID  : req.body.CategorieID,
-      Statut:        req.body.Statut,
+      SocieteID  : req.body.SocieteID,
     },
     });
 
@@ -23,17 +22,19 @@ router.post('/TProduit', async (req, res) => {
 })
 router.post('/IProduit', async (req, res) => {
   const newData = {
-    Libelle:   req.body.Libelle,
-    Ref:       req.body.Ref,
-    QteM :     req.body.QteM,
-    Colisage:  req.body.Colisage,
-    PAchat:    req.body.PAchat,
-    PHT:       req.body.PHT,
-    TVA:       req.body.TVA,
-    PTTC:      req.body.PTTC,
-    Type  :    req.body.Type,
-    AjouterPar: req.body.AjouterPar,
-    AjouterLe:  req.body.AjouterLe,
+    SocieteID:   req.body.SocieteID, 
+    CategorieID: req.body.CategorieID, 
+    Libelle:     req.body.Libelle,
+    Ref:         req.body.Ref,
+    QteM :       req.body.QteM,
+    Colisage:    req.body.Colisage,
+    PAchat:      req.body.PAchat,
+    PHT:         req.body.PHT,
+    TVA:         req.body.TVA,
+    PTTC:        req.body.PTTC,
+    Type  :      req.body.Type,
+    AjouterPar:  req.body.AjouterPar,
+    AjouterLe:   req.body.AjouterLe,
     };
     Produit.create(newData)
     .then((Produit) => {
@@ -48,6 +49,7 @@ router.post('/IProduit', async (req, res) => {
 })
 router.put ('/UProduit', async (req, res) => { 
   const updatedData = {
+    CategorieID: req.body.CategorieID, 
     Libelle:   req.body.Libelle,
     Ref:       req.body.Ref,
     QteM :     req.body.QteM,
@@ -60,12 +62,11 @@ router.put ('/UProduit', async (req, res) => {
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
-    //const id_ = req.query.ID;
     Produit.update(updatedData, {
       where: { id:  req.body.ID },
     })
     .then((Produit) => {
-      console.log('Data updated successfully:', Tiers);
+      console.log('Data updated successfully:', Produit);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {

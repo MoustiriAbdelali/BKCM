@@ -10,7 +10,7 @@ router.post  ('/TCodeBarre', async (req, res) => {
    
      // raw: true,
      where: {
-        ProduitID: req.body.ProduitID,
+      SocieteID  : req.body.SocieteID,
     },
     });
 
@@ -22,14 +22,17 @@ router.post  ('/TCodeBarre', async (req, res) => {
 })
 router.post  ('/ICodeBarre', async (req, res) => {
   const newData = {
-    Libelle:    req.body.Libelle,       
-    ProduitID: req.body.ProduitID,Type:       req.body.Type,
-    AjouterPar: req.body.AjouterPar,
-    AjouterLe:  req.body.AjouterLe,  
+    SocieteID  : req.body.SocieteID,
+    ProduitID:   req.body.ProduitID,
+    Libelle:     req.body.Libelle,       
+    CodeBarre:   req.body.CodeBarre,       
+  
+    AjouterPar:  req.body.AjouterPar,
+    AjouterLe:   req.body.AjouterLe,  
     };
-    DiverDB.create(newData)
-    .then((DiverDB) => {
-      console.log('Data inserted successfully:', DiverDB);
+    CodeBarre.create(newData)
+    .then((CodeBarre) => {
+      console.log('Data inserted successfully:', CodeBarre);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -40,17 +43,17 @@ router.post  ('/ICodeBarre', async (req, res) => {
 })
 router.put   ('/UCodeBarre', async (req, res) => { 
   const updatedData = {
-    Libelle:    req.body.Libelle,   
-    Couleur:    req.body.Couleur,      
+    Libelle:     req.body.Libelle,       
+    CodeBarre:   req.body.CodeBarre,     
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
     //const id_ = req.query.ID;
-    DiverDB.update(updatedData, {
+    CodeBarre.update(updatedData, {
       where: { id:  req.body.ID },
     })
-    .then((DiverDB) => {
-      console.log('Data updated successfully:', DiverDB);
+    .then((CodeBarre) => {
+      console.log('Data updated successfully:', CodeBarre);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -62,7 +65,7 @@ router.put   ('/UCodeBarre', async (req, res) => {
 router.delete('/DCodeBarre', async (req, res) => {
     try {
       // Find the record by ID
-      const recordToDelete = await DiverDB.findByPk(req.body.ID);
+      const recordToDelete = await CodeBarre.findByPk(req.body.ID);
   
       if (!recordToDelete) {
         return res.status(404).json({ error: 'Enregistrement non trouvé' });

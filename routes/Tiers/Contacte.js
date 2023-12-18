@@ -10,7 +10,7 @@ router.post('/TContacte', async (req, res) => {
      
        // raw: true,
        where: {
-        TiersID: req.body.TiersID,
+        SocieteID: req.body.SocieteID,
       },
       });
   
@@ -23,6 +23,7 @@ router.post('/TContacte', async (req, res) => {
 
   router.post('/IContacte', async (req, res) => {
     const newData = {
+      SocieteID : req.body.SocieteID ,
       TiersID   : req.body.TiersID ,
       NomPrenom : req.body.NomPrenom ,     
       Libelle   : req.body.Libelle ,   

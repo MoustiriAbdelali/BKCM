@@ -17,6 +17,7 @@ const RProduit     =require('./routes/Produit/Produit')
 const RCodeBarre   =require('./routes/Produit/CodeBarre')
 const RCategorie   =require('./routes/Produit/CategorieProduit')
 const RDiverDB    =require('./routes/Diver/DiverDB')
+const RSociete    =require('./routes/Diver/Societe')
 //////////////////API//////////////////////
 app.use('/api',RTiers)
 app.use('/api',RContacte)
@@ -25,6 +26,7 @@ app.use('/api',RProduit)
 app.use('/api',RCodeBarre)
 app.use('/api',RCategorie)
 app.use('/api',RDiverDB)
+app.use('/api',RSociete)
 
 
 

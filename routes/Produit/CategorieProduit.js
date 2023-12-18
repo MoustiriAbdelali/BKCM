@@ -7,11 +7,10 @@ const sequelize =require("sequelize")
 router.post  ('/TCatProd', async (req, res) => {
   try {
     const results = await CatProd.findAll({
-   
-     // raw: true,
-     where: {
-      Statut: req.body.Statut,
-    },
+      where: {
+        SocieteID  : req.body.SocieteID,
+      },
+
     });
 
     res.json(results);
@@ -22,6 +21,7 @@ router.post  ('/TCatProd', async (req, res) => {
 })
 router.post  ('/ICatProd', async (req, res) => {
   const newData = {
+    SocieteID:  req.body.SocieteID, 
     Libelle:    req.body.Libelle,       
     Couleur:    req.body.Couleur,       
        

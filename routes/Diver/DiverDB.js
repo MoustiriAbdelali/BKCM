@@ -10,7 +10,7 @@ router.post  ('/TDiverDB', async (req, res) => {
    
      // raw: true,
      where: {
-        Type: req.body.Type,
+      SocieteID: req.body.SocieteID,
     },
     });
 
@@ -22,6 +22,7 @@ router.post  ('/TDiverDB', async (req, res) => {
 })
 router.post  ('/IDiverDB', async (req, res) => {
   const newData = {
+    SocieteID:  req.body.SocieteID, 
     Libelle:    req.body.Libelle,       
     Couleur:    req.body.Couleur,       
     Type:       req.body.Type,

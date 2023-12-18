@@ -6,12 +6,9 @@ const sequelize =require("sequelize")
 
 router.post('/TTires', async (req, res) => {
   try {
-    const results = await Tiers.findAll({
-   
-     // raw: true,
+    const results = await Tiers.findAll({   
      where: {
-      Type  : req.body.Type,
-      Statut: req.body.Statut,
+      SocieteID  : req.body.SocieteID,
     },
     });
 
@@ -23,6 +20,7 @@ router.post('/TTires', async (req, res) => {
 })
 router.post('/ITires', async (req, res) => {
   const newData = {
+    SocieteID:  req.body.SocieteID, 
     Societe:    req.body.Societe,       
     Adresse:    req.body.Adresse,    
     RC:         req.body.RC,         
@@ -71,6 +69,7 @@ router.put ('/UTires', async (req, res) => {
 })
 router.put ('/STires', async (req, res) => { 
   const updatedData = {
+
     Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
