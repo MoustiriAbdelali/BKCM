@@ -10,7 +10,7 @@ router.post('/TCompte', async (req, res) => {
    
      // raw: true,
      where: {
-      Statut: req.body.Statut,
+      SocieteID: req.body.SocieteID,
     },
     });
 
