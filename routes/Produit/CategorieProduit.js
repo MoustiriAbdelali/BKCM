@@ -21,12 +21,14 @@ router.post  ('/TCatProd', async (req, res) => {
 })
 router.post  ('/ICatProd', async (req, res) => {
   const newData = {
-    SocieteID:  req.body.SocieteID, 
-    Libelle:    req.body.Libelle,       
-    Couleur:    req.body.Couleur,       
-       
-    AjouterPar: req.body.AjouterPar,
-    AjouterLe:  req.body.AjouterLe,  
+
+    SocieteID:     req.body.SocieteID, 
+    CategorieID_:  req.body.CategorieID_,
+    Libelle:       req.body.Libelle,       
+    Couleur:       req.body.Couleur,       
+          
+    AjouterPar:    req.body.AjouterPar,
+    AjouterLe:     req.body.AjouterLe,  
     };
     CatProd.create(newData)
     .then((CatProd) => {

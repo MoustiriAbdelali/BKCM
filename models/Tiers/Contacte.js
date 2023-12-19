@@ -4,7 +4,9 @@ module.exports = (sequelize, datatype) => {
   const Conctact = sequelize.define("Conctact", {
 
     NomPrenom:    { type: datatype.STRING(50),    allowNull: false, },
-    Libelle :     { type: datatype.STRING(50),    allowNull: false, },
+    Tel :         { type: datatype.STRING(15),    },
+    Email :       { type: datatype.STRING(50),    },
+    Fax :         { type: datatype.STRING(15),    },
     Fonction:     { type: datatype.INTEGER(8),    },
     Type  :       { type: datatype.INTEGER(1),    },//1 tel 2 email 3 fax 
 

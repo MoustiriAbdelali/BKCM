@@ -17,7 +17,7 @@ const db =require('../config/DataBase')
     
     const  Tiers      =MTiers      (db,sequelize)//
     const  Contact    =MConctct    (db,sequelize)//
-    const  Compte     =MCompte     (db,sequelize)
+    const  Compte     =MCompte     (db,sequelize)//
     const  Categorie  =MCategorie  (db,sequelize)//
     const  DiverDB    =MDiverDB    (db,sequelize)//
     const  CodeBarre  =MCodeBarre  (db,sequelize)//
