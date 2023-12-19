@@ -32,7 +32,7 @@ router.post('/IProduit', async (req, res) => {
     PHT:         req.body.PHT,
     TVA:         req.body.TVA,
     PTTC:        req.body.PTTC,
-    Type  :      req.body.Type,
+    Type_  :     req.body.Type_,
     AjouterPar:  req.body.AjouterPar,
     AjouterLe:   req.body.AjouterLe,
     };
@@ -58,7 +58,7 @@ router.put ('/UProduit', async (req, res) => {
     PHT:       req.body.PHT,
     TVA:       req.body.TVA,
     PTTC:      req.body.PTTC,
-    Type  :    req.body.Type,       
+    Type_  :    req.body.Type_,       
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };

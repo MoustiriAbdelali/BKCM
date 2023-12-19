@@ -5,7 +5,7 @@ module.exports = (sequelize, datatype) => {
 
     Libelle :     { type: datatype.STRING(50),     allowNull: false, },
     Couleur:      { type: datatype.INTEGER(8),    },
-    Type  :       { type: datatype.INTEGER(1),     allowNull: false, },//1 FONCTION
+    Type_  :       { type: datatype.INTEGER(1),     allowNull: false, },//1 FONCTION
 
     AjouterPar:   { type: datatype.STRING(50),    },
     AjouterLe:    { type: datatype.DATE           },
@@ -15,6 +15,7 @@ module.exports = (sequelize, datatype) => {
   {
     tableName: 'DiverDB',
     timestamps: false, // Disable createdAt and updatedAt columns
+    logging: false
   }
   )
   return DiverDB

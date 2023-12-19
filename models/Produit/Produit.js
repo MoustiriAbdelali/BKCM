@@ -14,7 +14,7 @@ module.exports = (sequelize, datatype) => {
     PTTC:       { type: datatype.DECIMAL(4, 2), defaultValue:0  },
  
     
-    Type  :     { type: datatype.INTEGER(1),    defaultValue:0  },//0 Marchendise 1 Service 3 N°serie
+    Type_  :    { type: datatype.INTEGER(1),    defaultValue:0  },//0 Marchendise 1 Service 3 N°serie
     Statut:     { type: datatype.INTEGER(1),    defaultValue:0  },// 0Actif 1Bloquer
 
     AjouterPar: { type: datatype.STRING(50),    },
@@ -25,6 +25,7 @@ module.exports = (sequelize, datatype) => {
   {
     tableName: 'Produit',
     timestamps: false, // Disable createdAt and updatedAt columns
+    logging: false
   }
   )
   return Produit

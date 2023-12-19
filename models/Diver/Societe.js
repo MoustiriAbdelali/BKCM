@@ -22,6 +22,7 @@ module.exports = (sequelize, datatype) => {
   {
     tableName: 'Societe',
     timestamps: false, // Disable createdAt and updatedAt columns
+    logging: false
   }
   )
   return Societe

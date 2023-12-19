@@ -18,6 +18,18 @@ router.post('/TTires', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
+router.get('/GTires', async (req, res) => {
+  try {
+    const results = await Tiers.findAll({   
+  
+    });
+
+    res.json(results);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+})
 router.post('/ITires', async (req, res) => {
   const newData = {
     SocieteID:  req.body.SocieteID, 
@@ -27,7 +39,7 @@ router.post('/ITires', async (req, res) => {
     NIF:        req.body.NIF,       
     NIC:        req.body.NIC,        
     AI:         req.body.AI,         
-    Type  :     req.body.Type  ,     
+    Type_  :     req.body.Type_  ,     
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };

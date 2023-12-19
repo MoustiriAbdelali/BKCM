@@ -14,6 +14,7 @@ module.exports = (sequelize, datatype) => {
   {
     tableName: 'CodeBarre',
     timestamps: false, // Disable createdAt and updatedAt columns
+    logging: false
   }
   )
   return CodeBarre

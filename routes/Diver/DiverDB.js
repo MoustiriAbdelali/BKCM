@@ -25,7 +25,7 @@ router.post  ('/IDiverDB', async (req, res) => {
     SocieteID:  req.body.SocieteID, 
     Libelle:    req.body.Libelle,       
     Couleur:    req.body.Couleur,       
-    Type:       req.body.Type,
+    Type_:      req.body.Type_,
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };

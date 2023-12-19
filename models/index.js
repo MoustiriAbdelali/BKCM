@@ -28,7 +28,7 @@ const db =require('../config/DataBase')
 
     const synchronizeModels = async () => {
         try {
-          await db.sync({ force: false, alter: true });
+          await db.sync({ force: false, alter: true ,logging: false});
           console.log('All models synchronized successfully.');
         } catch (error) {
           console.error('Error synchronizing models:', error);
@@ -36,10 +36,10 @@ const db =require('../config/DataBase')
       };
       synchronizeModels()
 
-    Tiers.hasMany     (Contact,     { foreignKey: 'TiersID'    });
-    Categorie.hasMany (Categorie,   { foreignKey: 'CategorieID_'});
-    Produit.hasMany   (CodeBarre,   { foreignKey: 'ProduitID'  });
-    Categorie.hasMany (Produit,     { foreignKey: 'CategorieID' ,onDelete: 'RESTRICT'  , onUpdate : 'CASCADE' });//Produit.belongsTo(Categorie);
+    Tiers.hasMany     (Contact,     { foreignKey: 'TiersID'     ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Categorie.hasMany (Categorie,   { foreignKey: 'CategorieID_',onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Produit.hasMany   (CodeBarre,   { foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Categorie.hasMany (Produit,     { foreignKey: 'CategorieID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});//Produit.belongsTo(Categorie);
     
     
     Societe.hasMany(Tiers     ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'}); 

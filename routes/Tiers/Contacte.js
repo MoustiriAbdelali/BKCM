@@ -30,7 +30,6 @@ router.post('/TContacte', async (req, res) => {
       Email     : req.body.Email , 
       Fax       : req.body.Fax ,   
       Fonction  : req.body.Fonction,   
-      Type      : req.body.Type  ,       
       AjouterPar: req.body.AjouterPar,
       AjouterLe : req.body.AjouterLe,  
       };
