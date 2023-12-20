@@ -4,7 +4,7 @@ const model =require('../../models')
 const Produit = model.Produit
 const sequelize =require("sequelize")
 
-router.post('/TProduit', async (req, res) => {
+router.post  ('/TProduit', async (req, res) => {
   try {
     const results = await Produit.findAll({
    
@@ -20,7 +20,7 @@ router.post('/TProduit', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.post('/IProduit', async (req, res) => {
+router.post  ('/IProduit', async (req, res) => {
   const newData = {
     SocieteID:   req.body.SocieteID, 
     CategorieID: req.body.CategorieID, 
@@ -47,7 +47,7 @@ router.post('/IProduit', async (req, res) => {
     });
 
 })
-router.put ('/UProduit', async (req, res) => { 
+router.put   ('/UProduit', async (req, res) => { 
   const updatedData = {
     CategorieID: req.body.CategorieID, 
     Libelle:   req.body.Libelle,
@@ -75,7 +75,7 @@ router.put ('/UProduit', async (req, res) => {
     });
 
 })
-router.put ('/SProduit', async (req, res) => { 
+router.put   ('/SProduit', async (req, res) => { 
   const updatedData = {
     Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
@@ -95,6 +95,23 @@ router.put ('/SProduit', async (req, res) => {
     });
 
 })
+router.delete('/DProduit', async (req, res) => {
+  try {
+    // Find the record by ID
+    const recordToDelete = await Produit.findByPk(req.body.ID);
 
+    if (!recordToDelete) {
+      return res.status(404).json({ error: 'Enregistrement non trouvé' });
+    }
+
+    // Delete the record
+    await recordToDelete.destroy();
+
+    return res.json({ message: 'Enregistrement supprimé avec succès' });
+  } catch (error) {
+    console.error('Error deleting record:', error);
+    return res.status(500).json({ error: 'Erreur interne du serveur' });
+  }
+})
 
   module.exports=router

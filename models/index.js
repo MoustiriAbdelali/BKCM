@@ -36,19 +36,19 @@ const db =require('../config/DataBase')
       };
       synchronizeModels()
 
-    Tiers.hasMany     (Contact,     { foreignKey: 'TiersID'     ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Categorie.hasMany (Categorie,   { foreignKey: 'CategorieID_',onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Produit.hasMany   (CodeBarre,   { foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Categorie.hasMany (Produit,     { foreignKey: 'CategorieID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});//Produit.belongsTo(Categorie);
+    Tiers.hasMany     (Contact     ,{ foreignKey: 'TiersID'     ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Categorie.hasMany (Categorie   ,{ foreignKey: 'CategorieID_',onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Produit.hasMany   (CodeBarre   ,{ foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Categorie.hasMany (Produit     ,{ foreignKey: 'CategorieID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});//Produit.belongsTo(Categorie);
     
     
-    Societe.hasMany(Tiers     ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'}); 
-    Societe.hasMany(Contact   ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Societe.hasMany(Compte    ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Societe.hasMany(Categorie ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Societe.hasMany(DiverDB   ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Societe.hasMany(CodeBarre ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    Societe.hasMany(Produit   ,{ foreignKey: 'SocieteID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (Tiers       ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'}); 
+    Societe.hasMany   (Contact     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (Compte      ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (Categorie   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (DiverDB     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (CodeBarre   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (Produit     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
 
 
 
