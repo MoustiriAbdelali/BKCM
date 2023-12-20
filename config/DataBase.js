@@ -1,12 +1,12 @@
 const sequelize =require("sequelize")
- const env = process.env.NODE_ENV || 'developement'
- const config_=require('./config')[env]
+ const env = process.env.NODE_ENV || 'Developement'
+ const config=require('./config')[env]
  module.exports =new  sequelize(
-    config_.database,
-    config_.username,
-    config_.password,
+    config.database,
+    config.username,
+    config.password,
     {
-  host:config_.host,
+  host:config.host,
   dialect: 'mysql'
     }
  ) 

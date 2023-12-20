@@ -2,12 +2,20 @@ const express =require('express')
 const router =express.Router()
 const model =require('../../models')
 const Produit = model.Produit
+const CatProduit = model.Categorie
 const sequelize =require("sequelize")
 
 router.post  ('/TProduit', async (req, res) => {
   try {
-    const results = await Produit.findAll({
-   
+    const results = await CatProduit.findAll({
+      attributes: ['Libelle', 'Couleur'],
+      
+    include: [
+        {
+          model: Produit,
+         // attributes: ['Libelle', 'Ref'], //'Qte','AlarmeBattery','Volt','Rsrp',
+        }
+        ],
      // raw: true,
      where: {
       SocieteID  : req.body.SocieteID,
