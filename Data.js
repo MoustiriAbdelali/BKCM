@@ -18,7 +18,7 @@ const TypePiece = [
     Ordre        :2,
     parametre_01 :1,
     parametre_02 :1,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :1202,
@@ -28,7 +28,7 @@ const TypePiece = [
     Ordre        :3,
     parametre_01 :1,
     parametre_02 :1,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :1301,
@@ -38,7 +38,7 @@ const TypePiece = [
     Ordre        :4,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :1402,
@@ -48,7 +48,7 @@ const TypePiece = [
     Ordre        :5,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
   /////////////////////////////////////////////vente////////////////////////////////////////////////
   {
     SocieteID    :1,
@@ -59,7 +59,7 @@ const TypePiece = [
     Ordre        :6,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :2100,
@@ -69,7 +69,7 @@ const TypePiece = [
     Ordre        :7,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :2202,
@@ -79,7 +79,7 @@ const TypePiece = [
     Ordre        :8,
     parametre_01 :1,
     parametre_02 :1,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :2301,
@@ -89,7 +89,7 @@ const TypePiece = [
     Ordre        :9,
     parametre_01 :1,
     parametre_02 :1,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :2402,
@@ -99,36 +99,36 @@ const TypePiece = [
     Ordre        :10,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
   {
     SocieteID    :1,
     Type_        :2501,
     Definition   :"Avoir sur Vente",
     Titre        :"Avoir sur Vente",
-    prefixe      :"FA",
-    Ordre        :10,
+    prefixe      :"AV",
+    Ordre        :11,
     parametre_01 :0,
     parametre_02 :0,
-  }
+  },
 
    /////////////////////////////////////////////STOCK////////////////////////////////////////////////
    {
     SocieteID    :1,
-    Type_        :3202,
+    Type_        :3201,
     Definition   :"Bon d'inventaire",
     Titre        :"Bon d'inventaire",
     prefixe      :"BI",
     Ordre        :12,
     parametre_01 :1,
     parametre_02 :0,
-  }
+  },
    {
     SocieteID    :1,
-    Type_        :3101,
+    Type_        :3102,
     Definition   :"Bon d'avarie",
     Titre        :"Bon d'avarie",
     prefixe      :"BA",
-    Ordre        :11,
+    Ordre        :13,
     parametre_01 :1,
     parametre_02 :0,
   }

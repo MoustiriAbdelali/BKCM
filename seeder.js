@@ -11,13 +11,13 @@ const DTypePiece=data.TypePiece
 
 
 
-console.log(DTypePiece);
+
   async function seedDatabase() {
     try {
     
   
       // Insert initial data into the database
-      await TypePiece.bulkCreate(CMF);
+      await TypePiece.bulkCreate(DTypePiece);
   
       console.log('Database seeded successfully.');
     } catch (error) {
