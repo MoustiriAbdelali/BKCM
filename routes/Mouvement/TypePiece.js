@@ -1,8 +1,9 @@
 const express =require('express')
 const router =express.Router()
 const model =require('../../models')
-const  TypePiece = model.TypePiece 
+const TypePiece = model.TypePiece 
 const sequelize =require("sequelize")
+
 
 router.post  ('/TTypePiece', async (req, res) => {
   try {
@@ -23,8 +24,9 @@ router.post  ('/ITypePiece', async (req, res) => {
   const newData = {
     SocieteID    :req.body.SocieteID    ,
     Type_        :req.body.Type_        ,
-    Définition   :req.body.Définition   ,
+    Definition   :req.body.Definition   ,
     Titre        :req.body.Titre        ,
+    prefixe      :req.body.prefixe      ,
     Mode_Calcul  :req.body.Mode_Calcul  ,
     Mode_Paiement:req.body.Mode_Paiement,
     Ordre        :req.body.Ordre        ,
@@ -37,7 +39,7 @@ router.post  ('/ITypePiece', async (req, res) => {
     parametre_07 :req.body.parametre_07 ,
     paramétre_08 :req.body.paramétre_08 ,
     paramétre_09 :req.body.paramétre_09 ,
-    paramétre_10 :req.body.paramétre_10 ,
+    Couleur      :req.body.Couleur ,
     AjouterPar   :req.body.AjouterPar   ,
     AjouterLe    :req.body.AjouterLe    ,
     };
@@ -55,6 +57,7 @@ router.post  ('/ITypePiece', async (req, res) => {
 router.put   ('/UTypePiece', async (req, res) => { 
   const updatedData = {
     Titre        :req.body.Titre        ,
+    prefixe      :req.body.prefixe      ,
     Mode_Calcul  :req.body.Mode_Calcul  ,
     Mode_Paiement:req.body.Mode_Paiement,
     Ordre        :req.body.Ordre        ,
@@ -67,7 +70,7 @@ router.put   ('/UTypePiece', async (req, res) => {
     parametre_07 :req.body.parametre_07 ,
     paramétre_08 :req.body.paramétre_08 ,
     paramétre_09 :req.body.paramétre_09 ,
-    paramétre_10 :req.body.paramétre_10 ,  
+    Couleur      :req.body.Couleur ,  
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
@@ -85,6 +88,22 @@ router.put   ('/UTypePiece', async (req, res) => {
     });
 
 })
+
+router.get   ('/CountTypePiece', async (req, res) => {
+    try {
+      const rowCount = await TypePiece.count();
+      res.json({ rowCount });
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+
+
+
+  
+
+
 
 
   module.exports=router

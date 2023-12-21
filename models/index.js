@@ -42,6 +42,7 @@ const db =require('../config/DataBase')
     const synchronizeModels = async () => {
         try {
           await db.sync({ force: false, alter: true ,logging: false});
+          
           console.log('All models synchronized successfully.');
         } catch (error) {
           console.error('Error synchronizing models:', error);
@@ -68,8 +69,8 @@ const db =require('../config/DataBase')
 
 
 
-   
 
+   
     module.exports={
         Tiers,
         Contact,
@@ -80,6 +81,7 @@ const db =require('../config/DataBase')
         Produit,
         Societe,
         TypePiece,
+        
         //mt,
        // LigneMt,
     }

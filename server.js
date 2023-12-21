@@ -7,7 +7,7 @@ const cors=require('cors')
 app.use(cors())
 app.use( bodyParser.urlencoded({extended:true}))
 app.use( bodyParser.json())
-
+const sequelize = require("sequelize");
 
 //////////////////Routes////////////////////////
 const RDiverDB     =require('./routes/Diver/DiverDB')
@@ -41,8 +41,15 @@ app.use('/api',RTypePiece)
 
 
 
+
+
+
+
+
 app.listen(port, () => { 
   console.log(`Server is running on portyesy`);
+  
 });
+
 
 
