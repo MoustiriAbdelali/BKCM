@@ -19,7 +19,7 @@ module.exports = (sequelize, datatype) => {
     Mnt_HT_B       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     Mnt_HT         :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     TypeRemise     :{ type: datatype.INTEGER(1)     ,defaultValue:false},
-    TxRemise       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
+    TxRemise       :{ type: datatype.DECIMAL(3,6)  ,defaultValue:0},
     MntRemiseHT    :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     MntRemiseTTC   :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     MNT_HT_NET     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
@@ -32,7 +32,7 @@ module.exports = (sequelize, datatype) => {
     ModeRegelment  :{ type: datatype.INTEGER(1)    },
     Date_paiement  :{ type: datatype.DATE          },
     Refchaque      :{ type: datatype.STRING(25)    },
-    mRéglement     :{ type: datatype.DECIMAL(24,6) ,defaultValue:0},
+    mReglement     :{ type: datatype.DECIMAL(24,6) ,defaultValue:0},
     mReste         :{ type: datatype.DECIMAL(24,6) ,defaultValue:0},
     
     EMP_Source     :{ type: datatype.INTEGER(11)   ,defaultValue:0},
