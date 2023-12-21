@@ -9,7 +9,7 @@ const db =require('../config/DataBase')
     const  MDiverDB      =require('./Diver/DiverDB')
 
     const  MTypePiece    =require('./Mouvement/TypePiece')
-    //const  Mmt           =require('./Mouvement/Mt')
+    const  Mmt           =require('./Mouvement/Mt')
     //const  MLigneMt      =require('./Mouvement/LigneMt')
 
 
@@ -34,7 +34,7 @@ const db =require('../config/DataBase')
     const  Societe    =MSociete    (db,sequelize)//
 
     const  TypePiece =MTypePiece   (db,sequelize)//
-    //const  mt =Mmt   (db,sequelize)//
+    const  mt        =Mmt          (db,sequelize)//
     //const  LigneMt =MLigneMt   (db,sequelize)//
 
 
@@ -51,6 +51,7 @@ const db =require('../config/DataBase')
       synchronizeModels()
 
     Tiers.hasMany     (Contact     ,{ foreignKey: 'TiersID'     ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Tiers.hasMany     (mt          ,{ foreignKey: 'TiersID'     ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Categorie.hasMany (Categorie   ,{ foreignKey: 'CategorieID_',onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Produit.hasMany   (CodeBarre   ,{ foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Categorie.hasMany (Produit     ,{ foreignKey: 'CategorieID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});//Produit.belongsTo(Categorie);
@@ -64,7 +65,7 @@ const db =require('../config/DataBase')
     Societe.hasMany   (CodeBarre   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (Produit     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (TypePiece   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    //Societe.hasMany   (mt          ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (mt          ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     //Societe.hasMany   (LigneMt     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
 
 
@@ -81,8 +82,7 @@ const db =require('../config/DataBase')
         Produit,
         Societe,
         TypePiece,
-        
-        //mt,
+        mt,
        // LigneMt,
     }
    

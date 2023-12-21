@@ -21,7 +21,7 @@ const RCodeBarre   =require('./routes/Produit/CodeBarre')
 const RCategorie   =require('./routes/Produit/CategorieProduit')
 
 const RTypePiece   =require('./routes/Mouvement/TypePiece')
-//const Rmt          =require('./routes/Mouvement/Mt')
+const Rmt          =require('./routes/Mouvement/Mt')
 //const RLIgneMt     =require('./routes/Mouvement/LigneMt')
 
 const RCompte      =require('./routes/Tresorerie/Compte')
@@ -35,7 +35,7 @@ app.use('/api',RCategorie)
 app.use('/api',RDiverDB)
 app.use('/api',RSociete)
 app.use('/api',RTypePiece)
-//app.use('/api',Rmt)
+app.use('/api',Rmt)
 //app.use('/api',RLIgneMt)
 
 
