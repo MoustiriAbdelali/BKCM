@@ -134,7 +134,23 @@ const TypePiece = [
   }
 
 ]
-
+const Tiers=[
+  {
+    SocieteID    :1,
+    Societe : "Passager",
+    Type_   : 2,
+  },
+]
+const Compte=[
+  {
+    SocieteID    :1,
+    Libelle :"Compte principal",
+  },
+  {
+    SocieteID    :1,
+    Libelle :"Caisse 01",
+  },
+]
 
 
 
@@ -148,5 +164,8 @@ const TypePiece = [
 
 
 module.exports={
-  TypePiece
+  TypePiece,
+  Tiers,
+  Compte
+
 }

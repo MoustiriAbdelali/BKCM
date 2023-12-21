@@ -20,7 +20,7 @@ router.post('/TCompte', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.post('/ICompte', async (req, res) => {
+router.post('/ICompte'      , async (req, res) => {
   const newData = {
     SocieteID:  req.body.SocieteID, 
     Libelle:    req.body.Libelle,       
@@ -39,7 +39,7 @@ router.post('/ICompte', async (req, res) => {
     });
 
 })
-router.put ('/UCompte', async (req, res) => { 
+router.put ('/UCompte'      , async (req, res) => { 
   const updatedData = {
     Libelle:    req.body.Libelle,       
     ModifiePar: req.body.ModifiePar,
@@ -59,7 +59,7 @@ router.put ('/UCompte', async (req, res) => {
     });
 
 })
-router.put ('/SCompte', async (req, res) => { 
+router.put ('/SCompte'      , async (req, res) => { 
   const updatedData = {
     Statut :    req.body.Statut, 
     ModifiePar: req.body.ModifiePar,
@@ -79,6 +79,14 @@ router.put ('/SCompte', async (req, res) => {
     });
 
 })
-
+router.get   ('/CountCompte', async (req, res) => {
+  try {
+    const rowCount = await Compte.count();
+    res.json({ rowCount });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
   module.exports=router

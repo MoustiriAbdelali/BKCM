@@ -4,7 +4,7 @@ const model =require('../../models')
 const  Tiers = model.Tiers
 const sequelize =require("sequelize")
 
-router.post  ('/TTires', async (req, res) => {
+router.post  ('/TTires',     async (req, res) => {
   try {
     const results = await Tiers.findAll({   
      where: {
@@ -18,7 +18,7 @@ router.post  ('/TTires', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.get   ('/GTires', async (req, res) => {
+router.get   ('/GTires',     async (req, res) => {
   try {
     const results = await Tiers.findAll({   
   
@@ -30,7 +30,7 @@ router.get   ('/GTires', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 })
-router.post  ('/ITires', async (req, res) => {
+router.post  ('/ITires',     async (req, res) => {
   const newData = {
     SocieteID:  req.body.SocieteID, 
     Societe:    req.body.Societe,       
@@ -54,7 +54,7 @@ router.post  ('/ITires', async (req, res) => {
     });
 
 })
-router.put   ('/UTires', async (req, res) => { 
+router.put   ('/UTires',     async (req, res) => { 
   const updatedData = {
     Societe:    req.body.Societe,       
     Adresse:    req.body.Adresse,    
@@ -79,7 +79,7 @@ router.put   ('/UTires', async (req, res) => {
     });
 
 })
-router.put   ('/STires', async (req, res) => { 
+router.put   ('/STires',     async (req, res) => { 
   const updatedData = {
 
     Statut :    req.body.Statut, 
@@ -100,7 +100,7 @@ router.put   ('/STires', async (req, res) => {
     });
 
 })
-router.delete('/DTires', async (req, res) => {
+router.delete('/DTires',     async (req, res) => {
   try {
     // Find the record by ID
     const recordToDelete = await Tiers.findByPk(req.body.ID);
@@ -118,5 +118,14 @@ router.delete('/DTires', async (req, res) => {
     return res.status(500).json({ error: 'Erreur interne du serveur' });
   }
 })
+router.get   ('/CountTires', async (req, res) => {
+  try {
+    const rowCount = await Tiers.count();
+    res.json({ rowCount });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
   module.exports=router
