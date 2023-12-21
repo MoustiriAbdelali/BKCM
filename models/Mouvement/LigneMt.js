@@ -18,14 +18,14 @@ module.exports = (sequelize, datatype) => {
     PrixRevient  :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
 
     TypeRemise   :{ type: datatype.INTEGER(1)     ,defaultValue:0},
-    TauxRemisE   :{ type: datatype.DECIMAL(3,6)   ,defaultValue:0},
+    TauxRemisE   :{ type: datatype.FLOAT          ,defaultValue:0},
     RemiseHT     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     RemiseTTC    :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     
     MntHT_B      :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},  
     MntHT        :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     HTNet        :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
-    TauxTVA      :{ type: datatype.DECIMAL(3,6)   ,defaultValue:0},
+    TauxTVA      :{ type: datatype.FLOAT          ,defaultValue:0},
     MntTVA       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     ResultatTTC  :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     TTCNet       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},

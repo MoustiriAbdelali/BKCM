@@ -19,7 +19,7 @@ module.exports = (sequelize, datatype) => {
     Mnt_HT_B       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     Mnt_HT         :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     TypeRemise     :{ type: datatype.INTEGER(1)     ,defaultValue:false},
-    TxRemise       :{ type: datatype.DECIMAL(3,6)  ,defaultValue:0},
+    TxRemise       :{ type: datatype.FLOAT          ,defaultValue:0},
     MntRemiseHT    :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     MntRemiseTTC   :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     MNT_HT_NET     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
