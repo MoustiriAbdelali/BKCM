@@ -12,6 +12,7 @@ const sequelize = require("sequelize");
 //////////////////Routes////////////////////////
 const RDiverDB     =require('./routes/Diver/DiverDB')
 const RSociete     =require('./routes/Diver/Societe')
+const RVariable     =require('./routes/Diver/Variable')
 
 const RTiers       =require('./routes/Tiers/Tiers')
 const RContacte    =require('./routes/Tiers/Contacte')
@@ -37,6 +38,7 @@ app.use('/api',RSociete)
 app.use('/api',RTypePiece)
 app.use('/api',Rmt)
 app.use('/api',RLIgneMt)
+app.use('/api',RVariable)
 
 
 

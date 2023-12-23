@@ -1,14 +1,20 @@
 const model =require('./models')
-const TypePiece = model.TypePiece 
-const Tiers     = model.Tiers 
-const Compte    = model.Compte 
+
 //const db =require('./config/DataBase')
 const host =process.env.HostComplie 
 require('dotenv').config();
 const data_ =require("./Data")
+
+const TypePiece = model.TypePiece 
+const Tiers     = model.Tiers 
+const Compte    = model.Compte 
+const Variable    = model.Variable 
+
+
 const DTypePiece=data_.TypePiece
 const DTiers=data_.Tiers
 const DCompte=data_.Compte
+const DVariable=data_.Variable
 
 
 // console.log(DTypePiece);
@@ -48,6 +54,16 @@ const DCompte=data_.Compte
       console.error('Compte: Error seeding database:', error);
     }
   }
+  async function seedVariable() {
+    try {
+      // Insert initial data into the database
+      await Variable.bulkCreate(DVariable);
+  
+      console.log('Compte: Database seeded successfully.');
+    } catch (error) {
+      console.error('Compte: Error seeding database:', error);
+    }
+  }
 //  
 // 
   const CntTypePiec = host+"/api/CountTypePiece"
@@ -70,3 +86,10 @@ const coundata = async (api,num)  => {
 coundata(CntTypePiec,1)
 coundata(CntCompte,3)
 coundata(CntTiers,2)
+
+
+let keys = Object.keys(DVariable);
+for (let i = 0; i < keys.length; i++) {
+    let key = keys[i];
+    console.log(key + ': ' + DVariable[key].NomVariable);
+}

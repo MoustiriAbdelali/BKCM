@@ -7,6 +7,7 @@ const db =require('../config/DataBase')
     ////////////////////model////////////////
     const  MSociete      =require('./Diver/Societe')
     const  MDiverDB      =require('./Diver/DiverDB')
+    const  MVariable     =require('./Diver/Variable')
 
     const  MTypePiece    =require('./Mouvement/TypePiece')
     const  Mmt           =require('./Mouvement/Mt')
@@ -29,6 +30,7 @@ const db =require('../config/DataBase')
     const  Compte     =MCompte     (db,sequelize)//
     const  Categorie  =MCategorie  (db,sequelize)//
     const  DiverDB    =MDiverDB    (db,sequelize)//
+    const  Variable   =MVariable    (db,sequelize)//
     const  CodeBarre  =MCodeBarre  (db,sequelize)//
     const  Produit    =MProduit    (db,sequelize)//
     const  Societe    =MSociete    (db,sequelize)//
@@ -55,7 +57,7 @@ const db =require('../config/DataBase')
     Categorie.hasMany (Categorie   ,{ foreignKey: 'CategorieID_',onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Produit.hasMany   (CodeBarre   ,{ foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Produit.hasMany   (LigneMt     ,{ foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
-    mt.hasMany        (LigneMt     ,{ foreignKey: 'ProduitID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    mt.hasMany        (LigneMt     ,{ foreignKey: 'MtID'        ,onDelete: 'CASCADE' , onUpdate : 'CASCADE'});
     Categorie.hasMany (Produit     ,{ foreignKey: 'CategorieID' ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});//Produit.belongsTo(Categorie);
     
     
@@ -64,6 +66,7 @@ const db =require('../config/DataBase')
     Societe.hasMany   (Compte      ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (Categorie   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (DiverDB     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
+    Societe.hasMany   (Variable    ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (CodeBarre   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (Produit     ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
     Societe.hasMany   (TypePiece   ,{ foreignKey: 'SocieteID'   ,onDelete: 'RESTRICT', onUpdate : 'CASCADE'});
@@ -86,5 +89,6 @@ const db =require('../config/DataBase')
         TypePiece,
         mt,
         LigneMt,
+        Variable
     }
    

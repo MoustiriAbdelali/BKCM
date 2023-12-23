@@ -4,7 +4,7 @@ const model =require('../../models')
 const LigneMt = model.LigneMt
 const sequelize =require("sequelize")
 
-router.post  ('/LigneMt',     async (req, res) => {
+router.post  ('/TLigneMt',     async (req, res) => {
   try {
     const results = await LigneMt.findAll({   
      where: {
@@ -19,44 +19,47 @@ router.post  ('/LigneMt',     async (req, res) => {
   }
 })
 
-router.post  ('/IMt',     async (req, res) => {
+router.post  ('/ILigneMt',     async (req, res) => {
   const newData = {
-    SocieteID      :req.body.SocieteID       ,
-    TiersID        :req.body.TiersID         ,
-    IDLienMT       :req.body.IDLienMT       ,
-    Date           :req.body.Date           ,
-    Reference      :req.body.Reference      ,
-    Num            :req.body.Num            ,
-    Mois           :req.body.Mois           ,
-    Annee          :req.body.Annee          ,
-    Type_          :req.body.Type_          ,
-    Statut         :req.body.Statut         ,
-    SansTVA        :req.body.SansTVA        ,
-    Mnt_HT_B       :req.body.Mnt_HT_B       ,
-    Mnt_HT         :req.body.Mnt_HT         ,
-    TypeRemise     :req.body.TypeRemise     ,
-    TxRemise       :req.body.TxRemise       ,
-    MntRemiseHT    :req.body.MntRemiseHT    ,
-    MntRemiseTTC   :req.body.MntRemiseTTC   ,
-    MNT_HT_NET     :req.body.MNT_HT_NET     ,
-    Mnt_TVA        :req.body.Mnt_TVA        ,
-    Droit_Timbre   :req.body.Droit_Timbre   ,
-    Mnt_TTC_B      :req.body.Mnt_TTC_B      ,
-    Mnt_TTC        :req.body.Mnt_TTC        ,
-    Mnt_TTC_Final  :req.body.Mnt_TTC_Final  ,
-    ModeRegelment  :req.body.ModeRegelment  ,
-    Date_paiement  :req.body.Date_paiement  ,
-    Refchaque      :req.body.Refchaque      ,
-    EMP_Source     :req.body.EMP_Source     ,
-    EMP_destination:req.body.EMP_destination,
-    Observation    :req.body.Observation    ,
+    SocieteID    :req.body.SocieteID    ,
+    ProduitID    :req.body.ProduitID    ,
+    MtID         :req.body.MtID         ,
+    Ordre        :req.body.Ordre        ,
+    TP_Ligne     :req.body.TP_Ligne     ,
+    IDLotProduit :req.body.IDLotProduit ,
+    Libellé      :req.body.Libellé      ,
+    Colisage     :req.body.Colisage     ,
+    Nbr_Colis    :req.body.Nbr_Colis    ,
+    Qte_VRAC     :req.body.Qte_VRAC     ,
+    Qte          :req.body.Qte          ,
+    PMP          :req.body.PMP          ,
+    PrixHT       :req.body.PrixHT       ,
+    PrixTTC      :req.body.PrixTTC      ,
+    PrixRevient  :req.body.PrixRevient  ,
+    TypeRemise   :req.body.TypeRemise   ,
+    TauxRemisE   :req.body.TauxRemisE   ,
+    RemiseHT     :req.body.RemiseHT     ,
+    RemiseTTC    :req.body.RemiseTTC    ,  
+    MntHT_B      :req.body.MntHT_B      ,
+    MntHT        :req.body.MntHT        ,
+    HTNet        :req.body.HTNet        ,
+    TauxTVA      :req.body.TauxTVA      ,
+    MntTVA       :req.body.MntTVA       ,
+    ResultatTTC  :req.body.ResultatTTC  ,
+    TTCNet       :req.body.TTCNet       ,
+    VRevient     :req.body.VRevient     ,
+    Qte_E        :req.body.Qte_E        ,
+    Qte_S        :req.body.Qte_S        ,
+    Date_PMP     :req.body.Date_PMP     ,
+    PMPnew       :req.body.PMPnew       ,
+    Benifice     :req.body.Benifice     , 
 
-    AjouterPar     :req.body.AjouterPar     ,
-    AjouterLe      :req.body.AjouterLe      ,  
+    AjouterPar   :req.body.AjouterPar   ,
+    AjouterLe    :req.body.AjouterLe    ,  
     };
-    Mt.create(newData)
-    .then((Mt) => {
-      console.log('Data inserted successfully:', Mt);
+    LigneMt.create(newData)
+    .then((LigneMt) => {
+      console.log('Data inserted successfully:', LigneMt);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -65,7 +68,7 @@ router.post  ('/IMt',     async (req, res) => {
     });
 
 })
-router.put   ('/UMt',     async (req, res) => { 
+router.put   ('/ULigneMt',     async (req, res) => { 
   const updatedData = {
     TiersID        :req.body.TiersID        ,
     IDLienMT       :req.body.IDLienMT       , 
@@ -101,11 +104,11 @@ router.put   ('/UMt',     async (req, res) => {
     ModifieLe      :req.body.ModifieLe      ,  
     };
     //const id_ = req.query.ID;
-    Mt.update(updatedData, {
+    LigneMt.update(updatedData, {
       where: { id:  req.body.ID },
     })
-    .then((Mt) => {
-      console.log('Data updated successfully:', Mt);
+    .then((LigneMt) => {
+      console.log('Data updated successfully:', LigneMt);
       res.status(200).json({ message: 'Avec succès' });
     })
     .catch((error) => {
@@ -114,31 +117,11 @@ router.put   ('/UMt',     async (req, res) => {
     });
 
 })
-router.put   ('/SMt',     async (req, res) => { 
-  const updatedData = {
 
-    Statut    :    req.body.Statut, 
-    ModifiePar: req.body.ModifiePar,
-    ModifieLe :  req.body.ModifieLe,  
-    };
-    //const id_ = req.query.ID;
-    Mt.update(updatedData, {
-      where: { id:  req.body.ID },
-    })
-    .then((Mt) => {
-      console.log('Data updated successfully:', Mt);
-      res.status(200).json({ message: 'Avec succès' });
-    })
-    .catch((error) => {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ error: 'Erreur lors de la modification des données' });
-    });
-
-})
-router.delete('/DMt',     async (req, res) => {
+router.delete('/DLigneMt',     async (req, res) => {
   try {
     // Find the record by ID
-    const recordToDelete = await Mt.findByPk(req.body.ID);
+    const recordToDelete = await LigneMt.findByPk(req.body.ID);
 
     if (!recordToDelete) {
       return res.status(404).json({ error: 'Enregistrement non trouvé' });

@@ -153,7 +153,12 @@ const Compte=[
 ]
 
 
-
+const Variable =[
+{
+  NomVariable :'ListType',
+  valeur      : '3102,3201,2301,2202,1202,1101'
+},
+]
 
 
 
@@ -166,6 +171,7 @@ const Compte=[
 module.exports={
   TypePiece,
   Tiers,
-  Compte
+  Compte,
+  Variable
 
 }

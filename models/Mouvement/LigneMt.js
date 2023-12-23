@@ -11,17 +11,14 @@ module.exports = (sequelize, datatype) => {
     Nbr_Colis    :{ type: datatype.DECIMAL(10,2)  ,defaultValue:0},
     Qte_VRAC     :{ type: datatype.DECIMAL(10,2)  ,defaultValue:0}, 
     Qte          :{ type: datatype.DECIMAL(10,2)  ,defaultValue:0},
-
     PMP          :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     PrixHT       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     PrixTTC      :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     PrixRevient  :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
-
     TypeRemise   :{ type: datatype.INTEGER(1)     ,defaultValue:0},
     TauxRemisE   :{ type: datatype.FLOAT          ,defaultValue:0},
     RemiseHT     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     RemiseTTC    :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
-    
     MntHT_B      :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},  
     MntHT        :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     HTNet        :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
@@ -30,14 +27,11 @@ module.exports = (sequelize, datatype) => {
     ResultatTTC  :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     TTCNet       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     VRevient     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
-
     Qte_E        :{ type: datatype.DECIMAL(10,2)  ,defaultValue:0},
     Qte_S        :{ type: datatype.DECIMAL(10,2)  ,defaultValue:0}, 
-
     Date_PMP     :{ type: datatype.DATE                          }, 
     PMPnew       :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
     Benifice     :{ type: datatype.DECIMAL(24,6)  ,defaultValue:0},
-
     AjouterPar     :{ type: datatype.STRING(50)    },
     AjouterLe      :{ type: datatype.DATE          },
     ModifiePar     :{ type: datatype.STRING(50)    },
