@@ -7,11 +7,11 @@ module.exports={
         password: process.env.DB_PASSWORD ,
         dialect:  process.env.DIALECT    
     },
-    production :{
-        host:     process.env.DB_HOST ,
-        database: process.env.DG_DATABASE ,
-        username: process.env.DG_USERNAME ,
-        password: process.env.DG_PASSWORD ,
+    Production :{
+        host:     'localhost' ,
+        database: "xtfwmbpy_comCloud" ,
+        username: "xtfwmbpy_comCloud",
+        password:"wE1~QW4C^l9d" ,
         dialect:  process.env.DIALECT ,
         logging:  false
     }
