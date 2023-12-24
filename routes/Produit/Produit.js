@@ -66,7 +66,8 @@ router.put   ('/UProduit', async (req, res) => {
     PHT:       req.body.PHT,
     TVA:       req.body.TVA,
     PTTC:      req.body.PTTC,
-    Type_  :    req.body.Type_,       
+    Type_  :    req.body.Type_, 
+    Statut :    req.body.Statut,       
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
@@ -83,26 +84,7 @@ router.put   ('/UProduit', async (req, res) => {
     });
 
 })
-router.put   ('/SProduit', async (req, res) => { 
-  const updatedData = {
-    Statut :    req.body.Statut, 
-    ModifiePar: req.body.ModifiePar,
-    ModifieLe:  req.body.ModifieLe,  
-    };
-    //const id_ = req.query.ID;
-    Produit.update(updatedData, {
-      where: { id:  req.body.ID },
-    })
-    .then((Produit) => {
-      console.log('Data updated successfully:', Produit);
-      res.status(200).json({ message: 'Avec succès' });
-    })
-    .catch((error) => {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ error: 'Erreur lors de la modification des données' });
-    });
 
-})
 router.delete('/DProduit', async (req, res) => {
   try {
     // Find the record by ID

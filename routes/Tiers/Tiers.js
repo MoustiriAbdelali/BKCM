@@ -39,7 +39,7 @@ router.post  ('/ITires',     async (req, res) => {
     NIF:        req.body.NIF,       
     NIC:        req.body.NIC,        
     AI:         req.body.AI,         
-    Type_  :     req.body.Type_  ,     
+    Type_  :     req.body.Type_  ,  
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };
@@ -61,7 +61,8 @@ router.put   ('/UTires',     async (req, res) => {
     RC:         req.body.RC,         
     NIF:        req.body.NIF,       
     NIC:        req.body.NIC,        
-    AI:         req.body.AI,         
+    AI:         req.body.AI,
+    Statut :    req.body.Statut,          
     ModifiePar: req.body.ModifiePar,
     ModifieLe:  req.body.ModifieLe,  
     };
@@ -79,27 +80,7 @@ router.put   ('/UTires',     async (req, res) => {
     });
 
 })
-router.put   ('/STires',     async (req, res) => { 
-  const updatedData = {
 
-    Statut :    req.body.Statut, 
-    ModifiePar: req.body.ModifiePar,
-    ModifieLe:  req.body.ModifieLe,  
-    };
-    //const id_ = req.query.ID;
-    Tiers.update(updatedData, {
-      where: { id:  req.body.ID },
-    })
-    .then((Tiers) => {
-      console.log('Data updated successfully:', Tiers);
-      res.status(200).json({ message: 'Avec succès' });
-    })
-    .catch((error) => {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ error: 'Erreur lors de la modification des données' });
-    });
-
-})
 router.delete('/DTires',     async (req, res) => {
   try {
     // Find the record by ID

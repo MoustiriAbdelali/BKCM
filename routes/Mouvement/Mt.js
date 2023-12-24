@@ -114,27 +114,7 @@ router.put   ('/UMt',     async (req, res) => {
     });
 
 })
-router.put   ('/SMt',     async (req, res) => { 
-  const updatedData = {
 
-    Statut    :    req.body.Statut, 
-    ModifiePar: req.body.ModifiePar,
-    ModifieLe :  req.body.ModifieLe,  
-    };
-    //const id_ = req.query.ID;
-    Mt.update(updatedData, {
-      where: { id:  req.body.ID },
-    })
-    .then((Mt) => {
-      console.log('Data updated successfully:', Mt);
-      res.status(200).json({ message: 'Avec succès' });
-    })
-    .catch((error) => {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ error: 'Erreur lors de la modification des données' });
-    });
-
-})
 router.delete('/DMt',     async (req, res) => {
   try {
     // Find the record by ID
