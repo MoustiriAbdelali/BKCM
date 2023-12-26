@@ -1,15 +1,16 @@
-const model =require('./models')
+//const fetch = require('node-fetch');
+const { TypePiece, Tiers, Compte, Variable } = require('./models');
+const data_ = require('./Data');
+const env = process.env.NODE_ENV || 'development';
+const config = require('./config/config')[env];
+api_=config.api
 
-//const db =require('./config/DataBase')
-const host =process.env.HostComplie 
-require('dotenv').config();
-const data_ =require("./Data")
-
-const TypePiece = model.TypePiece 
-const Tiers     = model.Tiers 
-const Compte    = model.Compte 
-const Variable    = model.Variable 
-
+console.log(config.api);
+console.log(config.host);
+console.log(config.database);
+console.log(config.username);
+console.log(config.password);
+console.log(config.dialect);
 
 const DTypePiece=data_.TypePiece
 const DTiers=data_.Tiers
@@ -66,22 +67,26 @@ const DVariable=data_.Variable
   }
 //  
 // 
-  const CntTypePiec = host+"/api/CountTypePiece"
-  const CntTiers    = host+"/api/CountTires"
-  const CntCompte   = host+"/api/CountCompte"
+  const CntTypePiec = api_+"/api/CountTypePiece"
+  const CntTiers    = api_+"/api/CountTires"
+  const CntCompte   = api_+"/api/CountCompte"
 // 
-const coundata = async (api,num)  => {
-  const res = await fetch (api);
-  const data = await res.json();
-  console.log(data);
-  if (data.rowCount==0  ) {
-    switch (num) {
-      case 1:     seedtypepeiece() ;  break; 
-      case 2:     seedTiers()      ;  break; 
-      case 3:     seedCompte()     ;  break; 
+const coundata = async (api, num) => {
+  try {
+    const res = await fetch(api);
+    const data = await res.json();
+    console.log(data);
+    if (data.rowCount == 0) {
+      switch (num) {
+        case 1: seedtypepeiece(); break;
+        case 2: seedTiers(); break;
+        case 3: seedCompte(); break;
+      }
     }
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
-}
+};
 // 
 coundata(CntTypePiec,1)
 coundata(CntCompte,3)

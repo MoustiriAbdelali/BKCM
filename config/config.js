@@ -1,18 +1,23 @@
 require('dotenv').config();
+
 module.exports={
-    Developement :{
+    development :{
         host:     process.env.DB_HOST ,
         database: process.env.DB_DATABASE ,
         username: process.env.DB_USERNAME ,
         password: process.env.DB_PASSWORD ,
-        dialect:  process.env.DIALECT    
+        dialect:  process.env.DIALECT,    
+        api:  process.env.DB_HostComplie    
     },
-    Production :{
-        host:     'localhost' ,
-        database: "xtfwmbpy_comCloud" ,
-        username: "xtfwmbpy_comCloud",
-        password:"wE1~QW4C^l9d" ,
+    production :{
+        host:     process.env.DG_HOST  ,
+        database: process.env.DG_DATABASE ,
+        username: process.env.DG_USERNAME ,
+        password: process.env.DG_PASSWORD ,
         dialect:  process.env.DIALECT ,
-        logging:  false
+        logging:  false,
+        api:  process.env.DG_HostComplie   
     }
 }
+
+

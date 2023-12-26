@@ -71,8 +71,8 @@ router.put   ('/UTypePiece', async (req, res) => {
     paramétre_08 :req.body.paramétre_08 ,
     paramétre_09 :req.body.paramétre_09 ,
     Couleur      :req.body.Couleur ,  
-    ModifiePar: req.body.ModifiePar,
-    ModifieLe:  req.body.ModifieLe,  
+    ModifiePar   :req.body.ModifiePar,
+    ModifieLe    :req.body.ModifieLe,  
     };
     //const id_ = req.query.ID;
     TypePiece.update(updatedData, {
