@@ -31,6 +31,8 @@ router.get   ('/GTires',     async (req, res) => {
   }
 })
 router.post  ('/ITires',     async (req, res) => {
+
+  try{
   const newData = {
     SocieteID:  req.body.SocieteID, 
     Societe:    req.body.Societe,       
@@ -43,15 +45,14 @@ router.post  ('/ITires',     async (req, res) => {
     AjouterPar: req.body.AjouterPar,
     AjouterLe:  req.body.AjouterLe,  
     };
-    Tiers.create(newData)
-    .then((Tiers) => {
-      console.log('Data inserted successfully:', Tiers);
-      res.status(200).json({ message: 'Avec succès' });
-    })
-    .catch((error) => {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ Erreur: "Erreur lors de l'insertion des données" });
-    });
+
+   await Tiers.create(newData);
+    const maxId = await Tiers.max('id');
+    res.status(200).json({ message: 'Avec succès',"id": maxId});
+  }catch (error) {
+    console.error('Error adding product:', error);
+    res.status(500).json({ Erreur: "Erreur lors de l'insertion des données" });
+  }
 
 })
 router.put   ('/UTires',     async (req, res) => { 

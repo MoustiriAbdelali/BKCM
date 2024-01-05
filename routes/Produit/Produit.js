@@ -155,7 +155,7 @@ router.post('/IProduit', async (req, res) => {
       AjouterLe: req.body.AjouterLe,
     };
 
-    const createdProduit = await Produit.create(newData);
+    await Produit.create(newData);
     const maxId = await Produit.max('id');
     res.status(200).json({ message: 'Avec succès',"id": maxId});
   } catch (error) {
