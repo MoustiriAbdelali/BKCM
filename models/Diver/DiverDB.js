@@ -4,7 +4,7 @@ module.exports = (sequelize, datatype) => {
   const DiverDB = sequelize.define("DiverDB", {
 
     Libelle :     { type: datatype.STRING(50),     allowNull: false, },
-    Couleur:      { type: datatype.INTEGER(8),    },
+    Couleur:      { type: datatype.STRING(7),    },
     Type_  :       { type: datatype.INTEGER(1),     allowNull: false, },//1 FONCTION
 
     AjouterPar:   { type: datatype.STRING(50),    },

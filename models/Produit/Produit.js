@@ -4,14 +4,14 @@ module.exports = (sequelize, datatype) => {
 
     Libelle:    { type: datatype.STRING(50),   allowNull: false, },
     Ref:        { type: datatype.STRING(50),    },
-    Qte :       { type: datatype.DECIMAL(4, 2), },
-    QteM :      { type: datatype.DECIMAL(4, 2), },
+    Qte :       { type: datatype.DECIMAL(6,4), },
+    QteM :      { type: datatype.DECIMAL(6,4), },
     Colisage:   { type: datatype.INTEGER(4),    },
 
-    PAchat:     { type: datatype.DECIMAL(4, 2), defaultValue:0  },
-    PHT:        { type: datatype.DECIMAL(4, 2), defaultValue:0  },
+    PAchat:     { type: datatype.DECIMAL(24, 6), defaultValue:0  },
+    PHT:        { type: datatype.DECIMAL(24, 6), defaultValue:0  },
     TVA:        { type: datatype.INTEGER(1),    defaultValue:0  },
-    PTTC:       { type: datatype.DECIMAL(4, 2), defaultValue:0  },
+    PTTC:       { type: datatype.DECIMAL(24, 6), defaultValue:0  },
  
     
     Type_  :    { type: datatype.INTEGER(1),    defaultValue:0  },//0 Marchendise 1 Service 3 N°serie

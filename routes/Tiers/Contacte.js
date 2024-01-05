@@ -46,9 +46,11 @@ router.post('/TContacte', async (req, res) => {
   })
   router.post('/UContacte', async (req, res) => {
     const updatedData = {
+      Fonction  : req.body.Fonction,        
       NomPrenom : req.body.NomPrenom ,     
-      Libelle   : req.body.Libelle ,   
-      Fonction  : req.body.Fonction,   
+      Tel       : req.body.Tel ,
+      Email     : req.body.Email , 
+      Fax       : req.body.Fax ,    
       ModifiePar: req.body.ModifiePar,
       ModifieLe : req.body.ModifieLe,  
       };

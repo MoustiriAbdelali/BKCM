@@ -4,7 +4,7 @@ module.exports = (sequelize, datatype) => {
   const Categorie = sequelize.define("Categorie", {
 
     Libelle :     { type: datatype.STRING(50), allowNull: false, },
-    Couleur:      { type: datatype.INTEGER(8),    },
+    Couleur:      { type: datatype.STRING(7),    },
 
     AjouterPar:   { type: datatype.STRING(50),    },
     AjouterLe:    { type: datatype.DATE           },

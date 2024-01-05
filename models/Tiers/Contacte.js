@@ -8,7 +8,6 @@ module.exports = (sequelize, datatype) => {
     Email :       { type: datatype.STRING(50),    },
     Fax :         { type: datatype.STRING(15),    },
     Fonction:     { type: datatype.INTEGER(8),    },
-    Type  :       { type: datatype.INTEGER(1),    },//1 tel 2 email 3 fax 
 
     AjouterPar:   { type: datatype.STRING(50),    },
     AjouterLe:    { type: datatype.DATE           },

@@ -55,16 +55,16 @@ const DVariable=data_.Variable
       console.error('Compte: Error seeding database:', error);
     }
   }
-  async function seedVariable() {
-    try {
-      // Insert initial data into the database
-      await Variable.bulkCreate(DVariable);
+  // async function seedVariable() {
+  //   try {
+  //     // Insert initial data into the database
+  //     await Variable.bulkCreate(DVariable);
   
-      console.log('Compte: Database seeded successfully.');
-    } catch (error) {
-      console.error('Compte: Error seeding database:', error);
-    }
-  }
+  //     console.log('Compte: Database seeded successfully.');
+  //   } catch (error) {
+  //     console.error('Compte: Error seeding database:', error);
+  //   }
+  // }
 //  
 // 
   const CntTypePiec = api_+"/api/CountTypePiece"
